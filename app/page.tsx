@@ -8,10 +8,10 @@ const units = [
 ];
 
 const routines = [
-  ["MON", "Sprint launch", "All-period day • 47 min", "Goal, constraint, mini-lesson, task board"],
-  ["TUE / THU", "Build + test", "Odd periods • 85–88 min", "Deep work, controlled trials, notebook evidence"],
-  ["WED / FRI", "Build + test", "Even periods • 80–81 min", "Deep work, code, driving, design review"],
-  ["WEEKLY", "Performance review", "Last 10 minutes", "Data wall, role rotation, next experiment"],
+  ["MONDAY", "Learn + launch", "All-period day • 47–52 min", "Direct instruction, teacher demo, safety, weekly target"],
+  ["WEDNESDAY", "STEM Lab studio", "Even-period block • 80–81 min", "VEX IQ STEM Lab build, code, test, and notebook evidence"],
+  ["FRIDAY", "Level Up competition lab", "Even-period block • 80–81 min", "Robot iteration, skills, strategy, scrimmage, and reflection"],
+  ["EVERY CLASS", "Evidence + reset", "Final 10–15 minutes", "Notebook update, data, next step, charging, parts and field reset"],
 ];
 
 const assessments = [
@@ -23,6 +23,9 @@ const assessments = [
 ];
 
 const resources = [
+  ["VEX IQ STEM Labs", "https://education.vex.com/stemlabs/iq"],
+  ["VEX IQ teacher resources + pacing guides", "https://education.vex.com/stemlabs/iq/teacher-resources"],
+  ["Global Robotics VEX IQ team resources", "https://library.globalrobotics.org/hc/en-us/categories/51091266492436-Teams?sc=vex-iq"],
   ["Current Level Up manual", "https://link.vex.com/docs/26-27/viqrc/game-manual"],
   ["Level Up overview + scoring", "https://www.vexrobotics.com/iq/competition"],
   ["Official manual version calendar", "https://www.vexrobotics.com/26-27-manuals"],
@@ -64,9 +67,9 @@ export default function Home() {
       </section>
 
       <section className="week" id="week">
-        <div className="sectionHead light"><div><p className="kicker">THE WEEKLY RHYTHM</p><h2>Short launch.<br/>Long runway.</h2></div><p>The course is block-ready. Every meeting ends with a clean field, charged batteries, labeled work, and one documented next step.</p></div>
+        <div className="sectionHead light"><div><p className="kicker">THE WEEKLY RHYTHM</p><h2>Learn Monday.<br/>Apply Wednesday.<br/>Compete Friday.</h2></div><p>Stauffer's all-period Monday provides a short 47–52 minute launch. Wednesday and Friday provide 80–81 minute even-period blocks for sustained engineering work. Every meeting ends with a clean field, charged batteries, labeled work, and one documented next step.</p></div>
         <div className="routineGrid">{routines.map(([day,title,time,detail],i)=><div className="routine" key={day}><span>{String(i+1).padStart(2,"0")}</span><div><b>{day}</b><h3>{title}</h3></div><div><b>{time}</b><p>{detail}</p></div></div>)}</div>
-        <div className="blockCallout"><span>BLOCK CLASS FLOW</span><b>10</b><small>brief + safety</small><i>→</i><b>55</b><small>build / code / test</small><i>→</i><b>15</b><small>evidence + reset</small></div>
+        <div className="blockCallout"><span>WED / FRI BLOCK FLOW</span><b>10</b><small>brief + safety</small><i>→</i><b>55</b><small>STEM Lab or Level Up work</small><i>→</i><b>15</b><small>evidence + reset</small></div>
       </section>
 
       <section className="teams" id="teams">
