@@ -1,0 +1,100 @@
+const units = [
+  { n: "01", dates: "Aug 13-Sep 18", title: "Launch the Lab", weeks: "5 weeks", color: "yellow", summary: "Safety, inventories, team culture, baseline builds, and a shared reading of Level Up.", products: ["Safety + parts certification", "Team charter and role rotation", "Level Up rules jigsaw", "Baseline driving and scoring data"], checkpoint: "Progress I • Sep 18" },
+  { n: "02", dates: "Sep 21-Oct 30", title: "Mechanisms That Score", weeks: "6 weeks", color: "blue", summary: "Iterate intakes, lifts, and structures against measurable Level Up constraints.", products: ["Three mechanism prototypes", "Decision matrix with evidence", "Legal competition robot v1", "Design review and notebook audit"], checkpoint: "Progress II • Oct 30" },
+  { n: "03", dates: "Nov 2-Dec 18", title: "Drive, Code, Compete", weeks: "7 weeks", color: "coral", summary: "Build repeatable routes, autonomous routines, match communication, and event readiness.", products: ["Driver skills route + data", "Autonomous coding skills routine", "Mock tournament and interview", "Semester portfolio defense"], checkpoint: "Semester I • Dec 18" },
+  { n: "04", dates: "Jan 5-Feb 12", title: "Rebuild From Evidence", weeks: "6 weeks", color: "mint", summary: "Use first-semester data to redesign for reliability, speed, and higher-value goals.", products: ["Failure analysis", "Robot v2 design proposal", "Controlled A/B tests", "Midyear skills benchmark"], checkpoint: "Progress IV • Feb 12" },
+  { n: "05", dates: "Feb 22-Apr 16", title: "Peak Competition", weeks: "7 weeks", color: "violet", summary: "Practice under pressure, scout partners, polish notebooks, and perform at qualifying events.", products: ["Scouting + alliance playbook", "Event-ready inspection packet", "Judge interview rehearsal", "Competition reflection"], checkpoint: "Progress V • Apr 16" },
+  { n: "06", dates: "Apr 19-Jun 4", title: "Legacy & Showcase", weeks: "7 weeks", color: "yellow", summary: "Transfer expertise, run a public showcase, and leave the program stronger for next year.", products: ["Student-led mini clinics", "Final engineering portfolio", "Community showcase", "Next-season handoff guide"], checkpoint: "Semester II • Jun 4" },
+];
+
+const routines = [
+  ["MON", "Sprint launch", "All-period day • 47 min", "Goal, constraint, mini-lesson, task board"],
+  ["TUE / THU", "Build + test", "Odd periods • 85–88 min", "Deep work, controlled trials, notebook evidence"],
+  ["WED / FRI", "Build + test", "Even periods • 80–81 min", "Deep work, code, driving, design review"],
+  ["WEEKLY", "Performance review", "Last 10 minutes", "Data wall, role rotation, next experiment"],
+];
+
+const assessments = [
+  ["Engineering process", "30%", "Notebook entries, sketches, iterations, evidence"],
+  ["Technical performance", "25%", "Build quality, code, driving, reliability, skills growth"],
+  ["Collaboration", "20%", "Role follow-through, communication, safety, stewardship"],
+  ["Competition readiness", "15%", "Rules, inspection, scouting, interviews, match conduct"],
+  ["Reflection + communication", "10%", "Design reviews, portfolios, demos, handoff"],
+];
+
+const resources = [
+  ["Current Level Up manual", "https://link.vex.com/docs/26-27/viqrc/game-manual"],
+  ["Level Up overview + scoring", "https://www.vexrobotics.com/iq/competition"],
+  ["Official manual version calendar", "https://www.vexrobotics.com/26-27-manuals"],
+  ["RECF Guide to Judging", "https://kb.roboticseducation.org/hc/en-us/articles/4788499711127-Guide-to-Judging-Introduction-and-Terms"],
+  ["Find official competitions", "https://www.robotevents.com/robot-competitions/vex-iq-competition"],
+];
+
+export default function Home() {
+  return (
+    <main>
+      <header className="topbar">
+        <a className="brand" href="#top" aria-label="Level Up Lab home"><span className="brandMark">L↑</span><span>LEVEL UP LAB</span></a>
+        <nav aria-label="Primary navigation">
+          <a href="#year">Year map</a><a href="#teams">Teams</a><a href="#assessment">Assessment</a><a href="#teacher">Teacher desk</a>
+        </nav>
+        <a className="pill small" href="./stauffer-viqrc-canvas.imscc" download>Canvas shell ↓</a>
+      </header>
+
+      <section className="hero" id="top">
+        <div className="eyebrow">2026–27 • MARY R. STAUFFER MIDDLE SCHOOL</div>
+        <h1>Build boldly.<br/><em>Compete kindly.</em></h1>
+        <p className="lede">A full-year competitive robotics elective built around VIQRC <strong>Level Up</strong>—where every prototype becomes evidence, every student owns the work, and every team leaves a legacy.</p>
+        <div className="heroActions"><a className="pill" href="#year">Explore the year <span>→</span></a><a className="textLink" href="#week">See the weekly rhythm ↓</a></div>
+        <div className="scoreRail" aria-label="Level Up scoring values">
+          <div><b>01</b><span>point</span><small>Floor goal</small></div><div><b>03</b><span>points</span><small>L1 goal</small></div><div><b>06</b><span>points</span><small>L2 goal</small></div><div><b>12</b><span>points</span><small>L3 goal</small></div><div className="hot"><b>16</b><span>points</span><small>L4 goal</small></div>
+        </div>
+        <div className="heroNote"><span>60</span><small>second matches</small><i></i><span>1</span><small>bean bag max possession</small><i></i><span>2</span><small>robots per alliance</small></div>
+      </section>
+
+      <section className="intro">
+        <p className="kicker">COURSE NORTH STAR</p>
+        <div className="split"><h2>Not a build club.<br/>An <span>engineering studio.</span></h2><div><p>Students cycle through research, design, building, coding, testing, communication, and reflection. Competition gives the work a real audience; evidence makes the learning visible.</p><div className="principles"><span>Student-centered</span><span>Evidence before opinion</span><span>Reliable before flashy</span><span>Kindness under pressure</span></div></div></div>
+      </section>
+
+      <section className="year" id="year">
+        <div className="sectionHead"><div><p className="kicker">THE 180-DAY ARC</p><h2>Six purposeful sprints</h2></div><p>Aligned to Downey Unified reporting periods. Event dates stay flexible so Stefani can add local tournaments in Canvas without rebuilding the course.</p></div>
+        <div className="unitGrid">{units.map((u) => <article className={`unit ${u.color}`} key={u.n}><div className="unitTop"><span>{u.n}</span><p>{u.dates}<br/><b>{u.weeks}</b></p></div><h3>{u.title}</h3><p>{u.summary}</p><ul>{u.products.map(p => <li key={p}>{p}</li>)}</ul><footer>{u.checkpoint}</footer></article>)}</div>
+        <div className="calendarStrip"><b>NO-SCHOOL / TRANSITION WINDOWS</b><span>Sep 7</span><span>Oct 12</span><span>Nov 11 & 23–27</span><span>Dec 21–Jan 4</span><span>Feb 15–19</span><span>Mar 26–Apr 2</span><span>May 31</span></div>
+      </section>
+
+      <section className="week" id="week">
+        <div className="sectionHead light"><div><p className="kicker">THE WEEKLY RHYTHM</p><h2>Short launch.<br/>Long runway.</h2></div><p>The course is block-ready. Every meeting ends with a clean field, charged batteries, labeled work, and one documented next step.</p></div>
+        <div className="routineGrid">{routines.map(([day,title,time,detail],i)=><div className="routine" key={day}><span>{String(i+1).padStart(2,"0")}</span><div><b>{day}</b><h3>{title}</h3></div><div><b>{time}</b><p>{detail}</p></div></div>)}</div>
+        <div className="blockCallout"><span>BLOCK CLASS FLOW</span><b>10</b><small>brief + safety</small><i>→</i><b>55</b><small>build / code / test</small><i>→</i><b>15</b><small>evidence + reset</small></div>
+      </section>
+
+      <section className="teams" id="teams">
+        <div className="sectionHead"><div><p className="kicker">TEAMS OF SIX</p><h2>Expertise moves.<br/>Ownership stays.</h2></div><p>Distribute the six or seven returning members across teams so experience is shared. Each specialty pair has a lead and a fully trained backup; returning status does not guarantee a lead role.</p></div>
+        <div className="teamLayout"><div className="roles">
+          <div><span>01</span><h3>Lead Driver</h3><p>Controller routines, Driving Skills, match communication</p></div><div><span>02</span><h3>Backup Driver</h3><p>Full driver cross-training and competition readiness</p></div><div><span>03</span><h3>Lead Programmer</h3><p>Code integration, sensors, versions, test plans</p></div><div><span>04</span><h3>Backup Programmer</h3><p>Independent debugging and Autonomous Coding Skills</p></div><div><span>05</span><h3>Lead Strategist</h3><p>Rules, scouting, alliance plans, post-match review</p></div><div><span>06</span><h3>Backup Strategist</h3><p>Rules verification, evidence review, event continuity</p></div>
+        </div><aside><b>LEAD + BACKUP PAIRS</b><h3>Backup means fully trained.</h3><p>All six students share construction, inspection, testing, cleanup, and engineering-notebook evidence. Leads coordinate and teach; backups must be able to assume the same core work.</p><hr/><p><strong>Returning members:</strong> distribute experience across teams and use role-readiness evidence—not seniority—to assign leads.</p></aside></div>
+      </section>
+
+      <section className="game">
+        <div className="gameTitle"><p className="kicker">2026–27 GAME LENS</p><h2>Level Up rewards<br/><span>smart tradeoffs.</span></h2></div>
+        <div className="tradeoffs"><article><b>HEIGHT</b><p>Higher goals pay more—but demand stability, alignment, and cycle time.</p></article><article><b>ROUTE</b><p>Travel the long path or engineer a robot that fits through narrow shortcuts.</p></article><article><b>RELIABILITY</b><p>One bean bag at a time turns every jam, drop, and recovery into useful data.</p></article><article><b>PARTNERSHIP</b><p>Two robots share a 60-second score. Coordinate space, colors, loads, and priorities.</p></article></div>
+        <p className="updateNote"><strong>Rule-update habit:</strong> open the current manual on Aug 13, Sep 10, Oct 15, Dec 10, Feb 4, and Apr 1. Teams log changes and test whether any design or strategy is affected.</p>
+      </section>
+
+      <section className="assessment" id="assessment">
+        <div className="sectionHead"><div><p className="kicker">GRADING THAT VALUES GROWTH</p><h2>Evidence beats<br/>trophies.</h2></div><p>Event placement never determines a grade. Students are assessed on the quality of their process, contribution, technical growth, and communication.</p></div>
+        <div className="assessmentTable">{assessments.map(([name,pct,evidence])=><div key={name}><b>{pct}</b><h3>{name}</h3><p>{evidence}</p></div>)}</div>
+        <div className="gradingDates"><b>GRADE WINDOWS</b><span>Sep 10–18</span><span>Oct 22–30</span><span>Dec 10–18</span><span>Feb 4–12</span><span>Apr 8–16</span><span>May 27–Jun 4</span></div>
+      </section>
+
+      <section className="teacher" id="teacher">
+        <div><p className="kicker">STEFANI’S TEACHER DESK</p><h2>Ready to run.<br/>Easy to adapt.</h2><p>The Canvas shell contains six modules, a start-here orientation, assignment prompts, rubrics, recurring notebook checks, event-prep tools, and a final showcase sequence.</p><div className="heroActions"><a className="pill dark" href="./stauffer-viqrc-canvas.imscc" download>Download Canvas .imscc ↓</a><a className="textLink darkText" href="./team-roster-template.csv" download>Team roster template ↓</a></div></div>
+        <aside><b>FIRST 48 HOURS</b><ol><li>Import the `.imscc` into a blank Canvas course.</li><li>Set course start/end dates and publish “Start Here.”</li><li>Assign teams after the skills + collaboration baseline.</li><li>Add actual RobotEvents tournaments to the calendar.</li><li>Confirm the elective period, then adjust due dates in bulk.</li></ol></aside>
+      </section>
+
+      <section className="resources"><p className="kicker">LIVE OFFICIAL SOURCES</p><h2>Rules change. Links stay useful.</h2><div>{resources.map(([label,url])=><a href={url} target="_blank" rel="noreferrer" key={label}><span>{label}</span><b>↗</b></a>)}</div><p className="fine">Use the current official manual and Q&amp;A as the authority. Curriculum scoring examples are instructional snapshots, not replacements for current rules.</p></section>
+      <footer className="footer"><div className="brand"><span className="brandMark">L↑</span><span>LEVEL UP LAB</span></div><p>Prepared for Stefani Lang • Mary R. Stauffer Middle School • 2026–27</p><a href="#top">Back to top ↑</a></footer>
+    </main>
+  );
+}
