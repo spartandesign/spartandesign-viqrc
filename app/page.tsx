@@ -25,12 +25,13 @@ const assessments = [
 const resources = [
   ["VEX IQ STEM Labs", "https://education.vex.com/stemlabs/iq"],
   ["VEX IQ teacher resources + pacing guides", "https://education.vex.com/stemlabs/iq/teacher-resources"],
+  ["Global Robotics & Science Foundation", "https://www.globalrobotics.org/"],
   ["Global Robotics VEX IQ team resources", "https://library.globalrobotics.org/hc/en-us/categories/51091266492436-Teams?sc=vex-iq"],
+  ["Global Robotics notebook rubrics", "https://library.globalrobotics.org/hc/en-us/articles/51134310278804-Engineering-Notebook-Rubrics"],
   ["Current Level Up manual", "https://link.vex.com/docs/26-27/viqrc/game-manual"],
   ["Level Up overview + scoring", "https://www.vexrobotics.com/iq/competition"],
   ["Official manual version calendar", "https://www.vexrobotics.com/26-27-manuals"],
-  ["RECF Guide to Judging", "https://kb.roboticseducation.org/hc/en-us/articles/4788499711127-Guide-to-Judging-Introduction-and-Terms"],
-  ["Find official competitions", "https://www.robotevents.com/robot-competitions/vex-iq-competition"],
+  ["Register teams + find official events", "https://events.vex.com/"],
 ];
 
 export default function Home() {
@@ -93,7 +94,7 @@ export default function Home() {
 
       <section className="teacher" id="teacher">
         <div><p className="kicker">STEFANI’S TEACHER DESK</p><h2>Ready to run.<br/>Easy to adapt.</h2><p>The Canvas shell contains six modules, a start-here orientation, assignment prompts, rubrics, recurring notebook checks, event-prep tools, and a final showcase sequence. A family-facing syllabus is available in print-ready and editable formats.</p><div className="heroActions"><a className="pill dark" href="./stauffer-viqrc-canvas.imscc" download>Download Canvas .imscc ↓</a><a className="textLink darkText" href="./team-roster-template.csv" download>Team roster template ↓</a></div><div className="familyDownloads"><a href="./Stauffer_VIQRC_Family_Syllabus_2026-27.pdf" download>Family syllabus PDF ↓</a><a href="./Stauffer_VIQRC_Family_Syllabus_2026-27.docx" download>Editable Word version ↓</a></div></div>
-        <aside><b>FIRST 48 HOURS</b><ol><li>Import the `.imscc` into a blank Canvas course.</li><li>Set course start/end dates and publish “Start Here.”</li><li>Assign teams after the skills + collaboration baseline.</li><li>Add actual RobotEvents tournaments to the calendar.</li><li>Confirm the elective period, then adjust due dates in bulk.</li></ol></aside>
+        <aside><b>FIRST 48 HOURS</b><ol><li>Import the `.imscc` into a blank Canvas course.</li><li>Set course start/end dates and publish “Start Here.”</li><li>Assign teams after the skills + collaboration baseline.</li><li>Add confirmed events from events.vex.com to the calendar.</li><li>Confirm the elective period, then adjust due dates in bulk.</li></ol></aside>
       </section>
 
       <section className="resources"><p className="kicker">LIVE OFFICIAL SOURCES</p><h2>Rules change. Links stay useful.</h2><div>{resources.map(([label,url])=><a href={url} target="_blank" rel="noreferrer" key={label}><span>{label}</span><b>↗</b></a>)}</div><p className="fine">Use the current official manual and Q&amp;A as the authority. Curriculum scoring examples are instructional snapshots, not replacements for current rules.</p></section>
