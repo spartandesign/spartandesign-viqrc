@@ -4,7 +4,7 @@
 @media(max-width:600px){.topbar{height:66px;padding:0 18px}.topbar .pill{font-size:0}.topbar .pill:after{content:".imscc";font-size:11px}.hero,.intro,.year,.week,.teams,.game,.assessment,.teacher,.resources{padding-left:22px;padding-right:22px}.hero{padding-top:65px}.hero h1{font-size:66px}.unitGrid,.roles,.tradeoffs{grid-template-columns:1fr}.unit{min-height:390px}.tradeoffs article{border-right:0;border-bottom:1px solid rgba(255,255,255,.5)}.assessmentTable>div{grid-template-columns:70px 1fr}.assessmentTable p{grid-column:2}.teacher{gap:30px}.footer{padding:22px}.footer .brand{width:100%}}
 @media print{.topbar{position:static}.pill{box-shadow:none}.hero{min-height:auto}.unit,.tradeoffs article{break-inside:avoid}}
 .familyDownloads{display:flex;flex-wrap:wrap;gap:12px 24px;margin-top:-14px}.familyDownloads a{font-size:13px;font-weight:800;border-bottom:1px solid var(--ink)}
-/* V5RC-informed student pathway */
+/* Student learning pathway */
 .pathway{padding:110px max(5vw,42px);background:var(--yellow);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
 .pathway .sectionHead{margin-bottom:42px}.pathway .sectionHead h2{max-width:820px}
 .stageRail{display:grid;grid-template-columns:1fr 44px 1fr 44px 1fr;align-items:stretch;border:2px solid var(--ink);background:var(--paper)}
@@ -16,3 +16,8 @@
 .systemGrid span{font:900 28px var(--font-display);color:var(--blue)}.systemGrid h3{font:800 20px/1 var(--font-display);text-transform:uppercase;margin:34px 0 10px}.systemGrid p{font-size:12px;line-height:1.5}
 @media(max-width:900px){.stageRail{grid-template-columns:1fr}.stageRail i{border:0;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);height:44px;transform:rotate(90deg)}.systemGrid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.pathway{padding-left:22px;padding-right:22px}.systemGrid{grid-template-columns:1fr}}
+.manualGrid{display:grid;grid-template-columns:repeat(4,1fr);margin-top:30px;border:1px solid rgba(255,255,255,.55)}
+.manualGrid article{padding:22px;border-right:1px solid rgba(255,255,255,.55)}.manualGrid article:last-child{border:0}
+.manualGrid b{display:block;color:var(--yellow);font:900 28px/1 var(--font-display)}.manualGrid span{display:block;margin-top:10px;font-size:11px;line-height:1.45}.manualFine{font-size:12px;line-height:1.55;max-width:1000px;margin-top:22px}
+@media(max-width:900px){.manualGrid{grid-template-columns:1fr 1fr}.manualGrid article:nth-child(2){border-right:0}}
+@media(max-width:600px){.manualGrid{grid-template-columns:1fr}.manualGrid article{border-right:0;border-bottom:1px solid rgba(255,255,255,.5)}}

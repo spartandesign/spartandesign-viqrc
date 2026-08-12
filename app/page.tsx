@@ -3,7 +3,7 @@ const units = [
   { n: "02", dates: "Sep 21-Oct 30", title: "Mechanisms That Score", weeks: "6 weeks", color: "blue", summary: "Iterate intakes, lifts, and structures against measurable Level Up constraints.", products: ["Three mechanism prototypes", "Decision matrix with evidence", "Legal competition robot v1", "Design review and notebook audit"], checkpoint: "Progress II • Oct 30" },
   { n: "03", dates: "Nov 2-Dec 18", title: "Drive, Code, Compete", weeks: "7 weeks", color: "coral", summary: "Build repeatable routes, autonomous routines, match communication, and event readiness.", products: ["Driver skills route + data", "Autonomous coding skills routine", "Mock tournament and interview", "Semester portfolio defense"], checkpoint: "Semester I • Dec 18" },
   { n: "04", dates: "Jan 5-Feb 12", title: "Rebuild From Evidence", weeks: "6 weeks", color: "mint", summary: "Use first-semester data to redesign for reliability, speed, and higher-value goals.", products: ["Failure analysis", "Robot v2 design proposal", "Controlled A/B tests", "Midyear skills benchmark"], checkpoint: "Progress IV • Feb 12" },
-  { n: "05", dates: "Feb 22-Apr 16", title: "Peak Competition", weeks: "7 weeks", color: "violet", summary: "Practice under pressure, scout partners, polish notebooks, and perform at qualifying events.", products: ["Scouting + alliance playbook", "Event-ready inspection packet", "Judge interview rehearsal", "Competition reflection"], checkpoint: "Progress V • Apr 16" },
+  { n: "05", dates: "Feb 22-Apr 16", title: "Peak Competition", weeks: "7 weeks", color: "violet", summary: "Practice under pressure, scout partners, polish notebooks, and perform at qualifying events.", products: ["Teamwork partner playbook", "Event-ready inspection packet", "Judge interview rehearsal", "Competition reflection"], checkpoint: "Progress V • Apr 16" },
   { n: "06", dates: "Apr 19-Jun 4", title: "Legacy & Showcase", weeks: "7 weeks", color: "yellow", summary: "Transfer expertise, run a public showcase, and leave the program stronger for next year.", products: ["Student-led mini clinics", "Final engineering portfolio", "Community showcase", "Next-season handoff guide"], checkpoint: "Semester II • Jun 4" },
 ];
 
@@ -26,7 +26,7 @@ const studioSystems = [
   ["01", "Learn the pathway", "Discover a concept, practice it in a STEM Lab, then prove it through Level Up evidence."],
   ["02", "Work in role pairs", "Drivers, programmers, and strategists each use a lead and fully trained backup playbook."],
   ["03", "Capture every studio", "Record the target, change, evidence, decision, and next test before cleanup."],
-  ["04", "Pass readiness gates", "Use rules, inspection, notebook, interview, skills, and packing checks before events."],
+  ["04", "Pass readiness gates", "Verify VIQRC size, motor, Drive Team, Loader, rules, notebook, skills, and packing checks."],
   ["05", "Defend the evidence", "At each grading period, curate the strongest notebook evidence and explain the next move."],
 ];
 
@@ -48,13 +48,13 @@ export default function Home() {
       <header className="topbar">
         <a className="brand" href="#top" aria-label="Level Up Lab home"><span className="brandMark">L↑</span><span>LEVEL UP LAB</span></a>
         <nav aria-label="Primary navigation">
-          <a href="#pathway">How it works</a><a href="#year">Year map</a><a href="#teams">Teams</a><a href="#assessment">Assessment</a><a href="#teacher">Teacher desk</a>
+          <a href="#pathway">How it works</a><a href="#year">Year map</a><a href="#teams">Teams</a><a href="#manual">Manual v1.1</a><a href="#teacher">Teacher desk</a>
         </nav>
         <a className="pill small" href="./stauffer-viqrc-canvas.imscc" download>Canvas shell ↓</a>
       </header>
 
       <section className="hero" id="top">
-        <div className="eyebrow">2026–27 • MARY R. STAUFFER MIDDLE SCHOOL</div>
+        <div className="eyebrow">2026–27 • MARY R. STAUFFER MIDDLE SCHOOL • MANUAL V1.1: AUG 6, 2026</div>
         <h1>Build boldly.<br/><em>Compete kindly.</em></h1>
         <p className="lede">A full-year competitive robotics elective built around VIQRC <strong>Level Up</strong>—where every prototype becomes evidence, every student owns the work, and every team leaves a legacy.</p>
         <div className="heroActions"><a className="pill" href="#year">Explore the year <span>→</span></a><a className="textLink" href="#week">See the weekly rhythm ↓</a></div>
@@ -70,7 +70,7 @@ export default function Home() {
       </section>
 
       <section className="pathway" id="pathway">
-        <div className="sectionHead"><div><p className="kicker">FROM THE SPARTAN DESIGN PLAYBOOK</p><h2>A pathway students can follow.</h2></div><p>The V5RC program’s strongest habit is making expert practice visible. VIQRC keeps that structure but uses shorter routines, clearer role pairing, and middle-school-sized evidence cycles.</p></div>
+        <div className="sectionHead"><div><p className="kicker">FROM THE SPARTAN DESIGN PLAYBOOK</p><h2>A pathway students can follow.</h2></div><p>The Spartan program’s strongest habit is making expert practice visible. This VIQRC course keeps that structure while using shorter routines, clearer role pairing, and middle-school-sized evidence cycles.</p></div>
         <div className="stageRail"><article><b>DISCOVER</b><span>Monday</span><p>Learn a rule, mechanism, coding idea, or team routine.</p></article><i>→</i><article><b>PRACTICE</b><span>Wednesday</span><p>Build skill through a VEX IQ STEM Lab or controlled exercise.</p></article><i>→</i><article><b>PROVE</b><span>Friday</span><p>Apply it to Level Up, collect evidence, and choose the next test.</p></article></div>
         <div className="systemGrid">{studioSystems.map(([n,title,detail])=><article key={n}><span>{n}</span><div><h3>{title}</h3><p>{detail}</p></div></article>)}</div>
       </section>
@@ -90,13 +90,15 @@ export default function Home() {
       <section className="teams" id="teams">
         <div className="sectionHead"><div><p className="kicker">TEAMS OF SIX</p><h2>Expertise moves.<br/>Ownership stays.</h2></div><p>Distribute the six or seven returning members across teams so experience is shared. Each specialty pair has a lead and a fully trained backup; returning status does not guarantee a lead role.</p></div>
         <div className="teamLayout"><div className="roles">
-          <div><span>01</span><h3>Lead Driver</h3><p>Controller routines, Driving Skills, match communication</p></div><div><span>02</span><h3>Backup Driver</h3><p>Full driver cross-training and competition readiness</p></div><div><span>03</span><h3>Lead Programmer</h3><p>Code integration, sensors, versions, test plans</p></div><div><span>04</span><h3>Backup Programmer</h3><p>Independent debugging and Autonomous Coding Skills</p></div><div><span>05</span><h3>Lead Strategist</h3><p>Rules, scouting, alliance plans, post-match review</p></div><div><span>06</span><h3>Backup Strategist</h3><p>Rules verification, evidence review, event continuity</p></div>
+          <div><span>01</span><h3>Lead Driver</h3><p>Controller routines, Driving Skills, match communication</p></div><div><span>02</span><h3>Backup Driver</h3><p>Full driver cross-training and competition readiness</p></div><div><span>03</span><h3>Lead Programmer</h3><p>Code integration, sensors, versions, test plans</p></div><div><span>04</span><h3>Backup Programmer</h3><p>Independent debugging and Autonomous Coding Skills</p></div><div><span>05</span><h3>Lead Strategist</h3><p>Rules, scouting, Teamwork partner plans, post-match review</p></div><div><span>06</span><h3>Backup Strategist</h3><p>Rules verification, evidence review, event continuity</p></div>
         </div><aside><b>LEAD + BACKUP PAIRS</b><h3>Backup means fully trained.</h3><p>All six students share construction, inspection, testing, cleanup, and engineering-notebook evidence. Leads coordinate and teach; backups must be able to assume the same core work.</p><hr/><p><strong>Returning members:</strong> distribute experience across teams and use role-readiness evidence—not seniority—to assign leads.</p></aside></div>
       </section>
 
-      <section className="game">
+      <section className="game" id="manual">
         <div className="gameTitle"><p className="kicker">2026–27 GAME LENS</p><h2>Level Up rewards<br/><span>smart tradeoffs.</span></h2></div>
         <div className="tradeoffs"><article><b>HEIGHT</b><p>Higher goals pay more—but demand stability, alignment, and cycle time.</p></article><article><b>ROUTE</b><p>Travel the long path or engineer a robot that fits through narrow shortcuts.</p></article><article><b>RELIABILITY</b><p>One bean bag at a time turns every jam, drop, and recovery into useful data.</p></article><article><b>PARTNERSHIP</b><p>Two robots share a 60-second score. Coordinate space, colors, loads, and priorities.</p></article></div>
+        <div className="manualGrid"><article><b>11 × 20 × 15</b><span>inch inspected start size • &lt;R3&gt;</span></article><article><b>6 MAX</b><span>VEX IQ Smart Motors • &lt;R9&gt;</span></article><article><b>DRIVER 1 + 2</b><span>switch at 0:35–0:25 • &lt;GG11&gt;</span></article><article><b>LOADER</b><span>matching Load Zone procedure • &lt;SG7&gt;</span></article></div>
+        <p className="manualFine"><strong>Scoring colors:</strong> Floor Goal and Levels 1–3 accept yellow or matching-color Bean Bags; Level 4 accepts yellow only. Teamwork qualification ranking uses average scores and events conclude with Finals Matches. Verified against Level Up Version 1.1.</p>
         <p className="updateNote"><strong>Rule-update habit:</strong> open the current manual on Aug 13, Sep 10, Oct 15, Dec 10, Feb 4, and Apr 1. Teams log changes and test whether any design or strategy is affected.</p>
       </section>
 
@@ -107,7 +109,7 @@ export default function Home() {
       </section>
 
       <section className="teacher" id="teacher">
-        <div><p className="kicker">MS. LANG’S TEACHER DESK</p><h2>Ready to run.<br/>Easy to adapt.</h2><p>The Canvas shell contains the six grading-period modules plus a competition-foundations sequence, role-pair playbooks, recurring evidence capture, notebook checkpoints, rubrics, rules tracking, interview practice, readiness gates, and an unpublished implementation guide for Ms. Lang.</p><div className="heroActions"><a className="pill dark" href="./stauffer-viqrc-canvas.imscc" download>Download Canvas .imscc ↓</a><a className="textLink darkText" href="./team-roster-template.csv" download>Team roster template ↓</a></div><div className="familyDownloads"><a href="./Stauffer_VIQRC_Family_Syllabus_2026-27.pdf" download>Family syllabus PDF ↓</a><a href="./Stauffer_VIQRC_Family_Syllabus_2026-27.docx" download>Editable Word version ↓</a></div></div>
+        <div><p className="kicker">MS. LANG’S TEACHER DESK</p><h2>Ready to run.<br/>Easy to adapt.</h2><p>The Canvas shell contains the six grading-period modules plus a Level Up v1.1 crosswalk, engineering-design tutorial, notebook directions, role-pair playbooks, checkpoints, rubrics, interview practice, and readiness gates.</p><div className="heroActions"><a className="pill dark" href="./stauffer-viqrc-canvas.imscc" download>Download Canvas .imscc ↓</a><a className="textLink darkText" href="./VIQRC_Level_Up_Engineering_Notebook_2026-27_Six_Person_Teams.pptx" download>Engineering notebook ↓</a></div><div className="familyDownloads"><a href="./Stauffer_VIQRC_Family_Syllabus_2026-27.pdf" download>Family syllabus PDF ↓</a><a href="./Spartan_Design_VIQRC_Handbook_2026-27.pdf" download>VIQRC handbook PDF ↓</a><a href="./team-roster-template.csv" download>Team roster template ↓</a></div></div>
         <aside><b>FIRST 48 HOURS</b><ol><li>Import the `.imscc` into a blank Canvas course.</li><li>Set course start/end dates and publish “Start Here.”</li><li>Assign teams after the skills + collaboration baseline.</li><li>Add confirmed events from events.vex.com to the calendar.</li><li>Confirm the elective period, then adjust due dates in bulk.</li></ol></aside>
       </section>
 
