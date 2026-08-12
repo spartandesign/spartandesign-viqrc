@@ -22,6 +22,14 @@ const assessments = [
   ["Reflection + communication", "10%", "Design reviews, portfolios, demos, handoff"],
 ];
 
+const studioSystems = [
+  ["01", "Learn the pathway", "Discover a concept, practice it in a STEM Lab, then prove it through Level Up evidence."],
+  ["02", "Work in role pairs", "Drivers, programmers, and strategists each use a lead and fully trained backup playbook."],
+  ["03", "Capture every studio", "Record the target, change, evidence, decision, and next test before cleanup."],
+  ["04", "Pass readiness gates", "Use rules, inspection, notebook, interview, skills, and packing checks before events."],
+  ["05", "Defend the evidence", "At each grading period, curate the strongest notebook evidence and explain the next move."],
+];
+
 const resources = [
   ["VEX IQ STEM Labs", "https://education.vex.com/stemlabs/iq"],
   ["VEX IQ teacher resources + pacing guides", "https://education.vex.com/stemlabs/iq/teacher-resources"],
@@ -40,7 +48,7 @@ export default function Home() {
       <header className="topbar">
         <a className="brand" href="#top" aria-label="Level Up Lab home"><span className="brandMark">L↑</span><span>LEVEL UP LAB</span></a>
         <nav aria-label="Primary navigation">
-          <a href="#year">Year map</a><a href="#teams">Teams</a><a href="#assessment">Assessment</a><a href="#teacher">Teacher desk</a>
+          <a href="#pathway">How it works</a><a href="#year">Year map</a><a href="#teams">Teams</a><a href="#assessment">Assessment</a><a href="#teacher">Teacher desk</a>
         </nav>
         <a className="pill small" href="./stauffer-viqrc-canvas.imscc" download>Canvas shell ↓</a>
       </header>
@@ -61,8 +69,14 @@ export default function Home() {
         <div className="split"><h2>Not a build club.<br/>An <span>engineering studio.</span></h2><div><p>Students cycle through research, design, building, coding, testing, communication, and reflection. Competition gives the work a real audience; evidence makes the learning visible.</p><div className="principles"><span>Student-centered</span><span>Evidence before opinion</span><span>Reliable before flashy</span><span>Kindness under pressure</span></div></div></div>
       </section>
 
+      <section className="pathway" id="pathway">
+        <div className="sectionHead"><div><p className="kicker">FROM THE SPARTAN DESIGN PLAYBOOK</p><h2>A pathway students can follow.</h2></div><p>The V5RC program’s strongest habit is making expert practice visible. VIQRC keeps that structure but uses shorter routines, clearer role pairing, and middle-school-sized evidence cycles.</p></div>
+        <div className="stageRail"><article><b>DISCOVER</b><span>Monday</span><p>Learn a rule, mechanism, coding idea, or team routine.</p></article><i>→</i><article><b>PRACTICE</b><span>Wednesday</span><p>Build skill through a VEX IQ STEM Lab or controlled exercise.</p></article><i>→</i><article><b>PROVE</b><span>Friday</span><p>Apply it to Level Up, collect evidence, and choose the next test.</p></article></div>
+        <div className="systemGrid">{studioSystems.map(([n,title,detail])=><article key={n}><span>{n}</span><div><h3>{title}</h3><p>{detail}</p></div></article>)}</div>
+      </section>
+
       <section className="year" id="year">
-        <div className="sectionHead"><div><p className="kicker">THE 180-DAY ARC</p><h2>Six purposeful sprints</h2></div><p>Aligned to Downey Unified reporting periods. Event dates stay flexible so Stefani can add local tournaments in Canvas without rebuilding the course.</p></div>
+        <div className="sectionHead"><div><p className="kicker">THE 180-DAY ARC</p><h2>Six purposeful sprints</h2></div><p>Aligned to Downey Unified reporting periods. Event dates stay flexible so Ms. Lang can add local tournaments in Canvas without rebuilding the course.</p></div>
         <div className="unitGrid">{units.map((u) => <article className={`unit ${u.color}`} key={u.n}><div className="unitTop"><span>{u.n}</span><p>{u.dates}<br/><b>{u.weeks}</b></p></div><h3>{u.title}</h3><p>{u.summary}</p><ul>{u.products.map(p => <li key={p}>{p}</li>)}</ul><footer>{u.checkpoint}</footer></article>)}</div>
         <div className="calendarStrip"><b>NO-SCHOOL / TRANSITION WINDOWS</b><span>Sep 7</span><span>Oct 12</span><span>Nov 11 & 23–27</span><span>Dec 21–Jan 4</span><span>Feb 15–19</span><span>Mar 26–Apr 2</span><span>May 31</span></div>
       </section>
@@ -93,12 +107,12 @@ export default function Home() {
       </section>
 
       <section className="teacher" id="teacher">
-        <div><p className="kicker">STEFANI’S TEACHER DESK</p><h2>Ready to run.<br/>Easy to adapt.</h2><p>The Canvas shell contains six modules, a start-here orientation, assignment prompts, rubrics, recurring notebook checks, event-prep tools, and a final showcase sequence. A family-facing syllabus is available in print-ready and editable formats.</p><div className="heroActions"><a className="pill dark" href="./stauffer-viqrc-canvas.imscc" download>Download Canvas .imscc ↓</a><a className="textLink darkText" href="./team-roster-template.csv" download>Team roster template ↓</a></div><div className="familyDownloads"><a href="./Stauffer_VIQRC_Family_Syllabus_2026-27.pdf" download>Family syllabus PDF ↓</a><a href="./Stauffer_VIQRC_Family_Syllabus_2026-27.docx" download>Editable Word version ↓</a></div></div>
+        <div><p className="kicker">MS. LANG’S TEACHER DESK</p><h2>Ready to run.<br/>Easy to adapt.</h2><p>The Canvas shell contains the six grading-period modules plus a competition-foundations sequence, role-pair playbooks, recurring evidence capture, notebook checkpoints, rubrics, rules tracking, interview practice, readiness gates, and an unpublished implementation guide for Ms. Lang.</p><div className="heroActions"><a className="pill dark" href="./stauffer-viqrc-canvas.imscc" download>Download Canvas .imscc ↓</a><a className="textLink darkText" href="./team-roster-template.csv" download>Team roster template ↓</a></div><div className="familyDownloads"><a href="./Stauffer_VIQRC_Family_Syllabus_2026-27.pdf" download>Family syllabus PDF ↓</a><a href="./Stauffer_VIQRC_Family_Syllabus_2026-27.docx" download>Editable Word version ↓</a></div></div>
         <aside><b>FIRST 48 HOURS</b><ol><li>Import the `.imscc` into a blank Canvas course.</li><li>Set course start/end dates and publish “Start Here.”</li><li>Assign teams after the skills + collaboration baseline.</li><li>Add confirmed events from events.vex.com to the calendar.</li><li>Confirm the elective period, then adjust due dates in bulk.</li></ol></aside>
       </section>
 
       <section className="resources"><p className="kicker">LIVE OFFICIAL SOURCES</p><h2>Rules change. Links stay useful.</h2><div>{resources.map(([label,url])=><a href={url} target="_blank" rel="noreferrer" key={label}><span>{label}</span><b>↗</b></a>)}</div><p className="fine">Use the current official manual and Q&amp;A as the authority. Curriculum scoring examples are instructional snapshots, not replacements for current rules.</p></section>
-      <footer className="footer"><div className="brand"><span className="brandMark">L↑</span><span>LEVEL UP LAB</span></div><p>Prepared for Stefani Lang • Mary R. Stauffer Middle School • 2026–27</p><a href="#top">Back to top ↑</a></footer>
+      <footer className="footer"><div className="brand"><span className="brandMark">L↑</span><span>LEVEL UP LAB</span></div><p>Prepared for Ms. Lang • Mary R. Stauffer Middle School • 2026–27</p><a href="#top">Back to top ↑</a></footer>
     </main>
   );
 }

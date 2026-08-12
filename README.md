@@ -1,6 +1,6 @@
 # Spartan Design VIQRC Curriculum
 
-A year-long 2026-2027 competitive VEX IQ curriculum for Mary R. Stauffer Middle School and Coach Stefani Lang.
+A year-long 2026-2027 competitive VEX IQ curriculum for Mary R. Stauffer Middle School and Ms. Lang.
 
 ## Site contents
 
